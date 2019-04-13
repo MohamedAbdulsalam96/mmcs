@@ -31,9 +31,9 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
-doctype_js = {
-	"Quotation": "custom_script/Quoatation.js"
-}
+#doctype_js = {
+#	"Quotation": "custom_script/Quoatation.js"
+#}
 
 # Home Pages
 # ----------
@@ -112,10 +112,15 @@ doctype_js = {
 # 	]
 # }
 
-fixtures = ["Custom Field", {
+fixtures = ["Custom Script", {
 				"doctype": "Print Format",
 				"filters":	{
 					"name": ["like", "%latest%"]
+				}},{
+				"doctype": "Custom Field",
+				"filters":	{
+					"dt": ["!=", "Email Alert"],
+					"dt": ["!=", "Email Alert Recipient"],
 				}
 			}]
 
