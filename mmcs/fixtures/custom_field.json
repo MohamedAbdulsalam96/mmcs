@@ -510,7 +510,7 @@
   "modified": "2017-08-01 23:18:40.203336", 
   "name": "Sales Invoice-kanban_column", 
   "no_copy": 0, 
-  "options": "\nCustomer", 
+  "options": "Customer", 
   "parent": null, 
   "parentfield": null, 
   "parenttype": null, 
