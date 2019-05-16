@@ -121,6 +121,9 @@ fixtures = ["Custom Script", {
 				"filters":	{
 					"dt": ["!=", "Email Alert"],
 					"dt": ["!=", "Email Alert Recipient"],
+					"dt": ["like", "Sales Invoice%"],
+					"dt": ["like", "Sales Order%"],
+					"dt": ["like", "Quotation%"]
 				}
 			}]
 
