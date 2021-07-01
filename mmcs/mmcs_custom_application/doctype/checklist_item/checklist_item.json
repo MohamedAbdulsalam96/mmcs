@@ -1,0 +1,45 @@
+{
+ "creation": "2020-09-28 20:43:01.752627",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "completed",
+  "checklist_name",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "checklist_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Checklist Name",
+   "options": "Checklist",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "checklist_name.description",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "completed",
+   "fieldtype": "Check",
+   "label": "Completed"
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-09-28 21:21:27.569414",
+ "modified_by": "Administrator",
+ "module": "MMCS Custom Application",
+ "name": "Checklist Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
