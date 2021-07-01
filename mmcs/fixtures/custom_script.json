@@ -1,7 +1,7 @@
 [
  {
   "docstatus": 0, 
-  "doctype": "Custom Script", 
+  "doctype": "Client Script", 
   "dt": "Supplier Quotation", 
   "modified": "2019-03-24 02:15:32.343042", 
   "name": "Supplier Quotation-Client", 
@@ -13,7 +13,7 @@
  }, 
  {
   "docstatus": 0, 
-  "doctype": "Custom Script", 
+  "doctype": "Client Script", 
   "dt": "Quotation", 
   "modified": "2019-03-24 01:49:37.921727", 
   "name": "Quotation-Client", 
@@ -25,7 +25,7 @@
  }, 
  {
   "docstatus": 0, 
-  "doctype": "Custom Script", 
+  "doctype": "Client Script", 
   "dt": "Opportunity", 
   "modified": "2019-03-24 03:04:04.406043", 
   "name": "Opportunity-Client", 
