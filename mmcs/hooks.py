@@ -112,7 +112,7 @@ app_license = "MIT"
 # 	]
 # }
 
-fixtures = ["Custom Script", {
+fixtures = ["Client Script", {
 				"doctype": "Print Format",
 				"filters":	{
 					"name": ["like", "%latest%"]

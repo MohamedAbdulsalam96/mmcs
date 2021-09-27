@@ -1,0 +1,67 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 1,
+  "modified": "2020-11-06 06:37:00.283023",
+  "name": "Sales Order-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on('Sales Order',  'checklist_template',  function(frm) {\n\n\t    frappe.call({\n\t\t\t\tmethod: \"frappe.client.get\",\n\t\t\t\targs: {\n\t\t\t\t\tdoctype: \"Checklist Template\",\n\t\t\t\t\tname: frm.doc.checklist_template\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t\tif(r.message && !r.exc) {\n\t\t\t\t\t    console.log(r.message.items)\n\t\t\t\t\t     \t\tcur_frm.clear_table(\"checklist_items\");\n\t\t\t\t\t   $.each(r.message.items, function(i, item) {\n                            var item_row = frm.add_child(\"checklist_items\")\n                            console.log(item)\n                            item_row.checklist_name = item.checklist_name\n                            item_row.description = item.description\n                            \n    \t\t\t\t\t});\n    \t\t\t\t\t\trefresh_field(\"checklist_items\");\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t})\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2020-11-06 06:37:54.991061",
+  "name": "Sales Invoice-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on('Sales Invoice',  'checklist_template',  function(frm) {\n\n\t    frappe.call({\n\t\t\t\tmethod: \"frappe.client.get\",\n\t\t\t\targs: {\n\t\t\t\t\tdoctype: \"Checklist Template\",\n\t\t\t\t\tname: frm.doc.checklist_template\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t\tif(r.message && !r.exc) {\n\t\t\t\t\t    console.log(r.message.items)\n\t\t\t\t\t     \t\tcur_frm.clear_table(\"checklist_items\");\n\t\t\t\t\t   $.each(r.message.items, function(i, item) {\n                            var item_row = frm.add_child(\"checklist_items\")\n                            console.log(item)\n                            item_row.checklist_name = item.checklist_name\n                            item_row.description = item.description\n                            \n    \t\t\t\t\t});\n    \t\t\t\t\t\trefresh_field(\"checklist_items\");\n\t\t\t\t\t}\n\t\t\t\t\n\t\t\t\t}\n\t\t\t})\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Supplier Quotation",
+  "enabled": 0,
+  "modified": "2019-03-24 02:15:32.343042",
+  "name": "Supplier Quotation-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "/*\nfrappe.ui.form.on('Supplier Quotation', {\n    onload: function(frm) {\n\n      frm.add_custom_button(__('abs'),function() {\n\t\tfrappe.model.open_mapped_doc({\n\t\t\tmethod: \"erpnext.buying.doctype.supplier_quotation.supplier_quotation.make_quotation\",\n\t\t\tfrm: cur_frm\n\t\t})\n\t\n    }, __(\"Create\"));\n\n  }\n});\n\n*/",
+  "view": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Quotation",
+  "enabled": 0,
+  "modified": "2019-03-24 01:49:37.921727",
+  "name": "Quotation-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on('Quotation', {\n    markup_option: function(frm) {\n\tif(parseInt(frm.doc.markup_option) > 0){\n\t\t$.each(frm.doc.items || [], function(i, v) {\n\t\t\tconsole.log(v.rate)\n\t\t\tvar rate = v.rate;\n\t\t\tfrappe.model.set_value(v.doctype, v.name, \"rate\", ((parseInt(frm.doc.markup_option) * parseInt(rate))/100)+ rate )\n\t\t})\n\t\t}\n\t}\n})",
+  "view": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Opportunity",
+  "enabled": 0,
+  "modified": "2019-03-24 03:04:04.406043",
+  "name": "Opportunity-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on(\"Opportunity\", {\n\trefresh: function(frm) {\n\t\t\n\t\tfrm.add_custom_button(__('Request for Quotation'), function() {\n\t\t\t\t\tfrappe.model.open_mapped_doc({\n\t\t\t\t\t\tmethod: \"mmcs.api.make_rfq\",\n\t\t\t\t\t\tfrm: cur_frm\n\t\t\t\t\t})\n\t\t\t\t}, __('Make'));\n  }\n\t\n})\n",
+  "view": null
+ }
+]
